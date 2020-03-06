@@ -131,7 +131,10 @@ less_fancy_echo "Restarting affected apps, some of these changes require a logou
 
 
 fancy_echo "installing oh my zsh"
-(sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)")
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+fancy_echo "install zeta theme"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/skylerlee/zeta-zsh-theme/master/scripts/install.sh | sed 's:env zsh -l::g')"
 
 fancy_echo "starting thoughtbot laptop script"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/thoughtbot/laptop/master/mac)"
